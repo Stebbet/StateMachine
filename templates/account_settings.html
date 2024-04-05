@@ -1,0 +1,36 @@
+
+<script>
+
+
+</script>
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Account Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <form class="container-fluid">
+                <div class="input-group">
+                  <span class="input-group-text" id="basic-addon1">Username</span>
+                  <input type="text" class="form-control" placeholder="{{ user.username }}" aria-label="{{ user.username }}" aria-describedby="basic-addon1" disabled>
+                </div>
+              </form>
+            </div>
+            <div class="container">
+                <form class="container-fluid">
+                    <div class="input-group">
+                      <span class="input-group-text" id="basic-addon2">Email</span>
+                      <input type="text" class="form-control" placeholder="{{ user.email }}" aria-label="{{ user.email }}" aria-describedby="basic-addon1" disabled>
+                    </div>
+                  </form>
+            </div>
+        </div>
+        <div class="modal-footer" style="float: left; margin-bottom: 40px">
+            <button class="btn btn-danger" id="delete-user" style="position:absolute; bottom:5%; right: 3%">Remove Account?</button>
+        </div>
+    </div>
+</div>
+

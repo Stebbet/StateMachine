@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Sign In</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action={% url 'login' %} method="POST">
+            {% csrf_token %}
+            <div class="modal-body">
+                <div class="container">
+                    <p style="color:crimson">Username or Password Incorrect, please try again</p>
+                    <div class="fact_container">
+                         {{ login_form|crispy }}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="float: left">
+                <button class="btn btn-warning" style="position: relative; left: 5%" onclick="updateLogin()" type="submit">Login</button>
+            </div>
+        </form>
+        <p class="text-center">Don't have an account? <a href='#' class="small dark account register_button"> Create an account</a></p>
+
+    </div>
+</div>
+

@@ -1,0 +1,48 @@
+<script>
+    // Function enables the button if the pledge is accepted
+    function isChecked() {
+        var button = document.getElementById("submit-btn");
+        var checkbox = document.getElementById("agree");
+
+        if (checkbox.checked === true) {
+            button.disabled = "";
+        } else {
+            button.disabled = "disabled";
+        }
+    }
+</script>
+
+<style>
+    .form-check-label:hover {
+        cursor: pointer;
+    }
+</style>
+
+{% load crispy_forms_tags %}
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Sign Up</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action={% url 'register' %} method="POST">
+            {% csrf_token %}
+            <div class="modal-body">
+                <div class="container">
+                    <div>
+                        {{ register_form|crispy }}
+                        <input class="form-check-input" type="checkbox" name="accept_policy" required="required" id="agree" onchange="isChecked()">
+                        <label class="form-check-label" for="agree">
+                            I have read and agree to StateMachine's <a style="color: dodgerblue" onclick="privacy_policy();">Privacy Policy</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="float: left">
+                <button class="btn btn-warning" type="submit" id="submit-btn" disabled onclick="updateLogin();">Register</button>
+            </div>
+        </form>
+        <p class="text-center">Already have an account? <a href="#" class="small dark account login_button">Login</a></p>
+    </div>
+</div>
+

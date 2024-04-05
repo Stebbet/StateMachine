@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.2/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap">
+    <script src="{% static 'jquery/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap-5.3.2/js/bootstrap.bundle.min.js' %}"></script>
+    <title>Password Reset</title>
+</head>
+<body>
+    <style>
+        .center {
+          width: 25%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%)
+        }
+    </style>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

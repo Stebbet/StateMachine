@@ -1,0 +1,28 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Success!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <p>Machine Saved Successfully</p>
+            </div>
+        </div>
+        <div class="modal-footer" style="float: left; margin-bottom: 40px">
+            <style>
+                a {
+                    font-family: var(--bs-btn-font-family);
+                    font-size: var(--bs-btn-font-size);
+                    font-weight: var(--bs-btn-font-weight);
+                    text-decoration: none;
+                    color: black;
+                }
+            </style>
+            <button class="btn btn-warning" onclick="toDash();" style="position:absolute; bottom:5%; left: 2%">
+                Dashboard
+            </button>
+            <button class="btn btn-warning" style="position:absolute; bottom:5%; right: 3%" onclick="$('#modalcontainer').modal('toggle');">Canvas</button>
+        </div>
+    </div>
+</div>

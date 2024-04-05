@@ -1,0 +1,17 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Filename Already Exists</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <p>Do you wish to continue?</p>
+            </div>
+        </div>
+        <div class="modal-footer" style="float: left; margin-bottom: 40px">
+           <button class="btn btn-warning" onclick="$('#modalcontainer').modal('toggle');" style="position:absolute; bottom:5%; left: 2%">Cancel</button>
+            <button class="btn btn-warning" onclick="save();" style="position:absolute; bottom:5%; right: 3%">Update This File</button>
+        </div>
+    </div>
+</div>

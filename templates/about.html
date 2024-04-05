@@ -1,0 +1,82 @@
+<style>
+    img {
+        position: relative;
+        border-radius: 5px;
+    }
+
+    .center-container {
+        align-content: center;
+        justify-content: center;
+        display: flex;
+        position: relative
+    }
+
+    .split {
+        height: fit-content;
+        width: 50%;
+        position: relative;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 10px;
+    }
+
+    /* Control the left side */
+    .left {
+        left: 0;
+    }
+
+    /* Control the right side */
+    .right {
+        right: 0;
+    }
+
+</style>
+
+<div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">About</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="overflow: auto">
+            <div class="container center-container">
+                <img src="https://images.unsplash.com/photo-1642952469120-eed4b65104be?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600"
+                     width="95%" height="350px" alt="FSM Designer">
+            </div>
+            <hr>
+            <div class="container center-container" style="text-align: center">
+                This application is a tool for designing and simulating finite-state machines. Including discrete finite
+                automata (DFA) as well as Mealy and Moore machines. It is aimed at A-Level to Undergraduate Computer
+                Science and Engineering students who wish to learn about, refresh their knowledge,
+                or simply design and work with finite-state machines. This site is continuously in development
+                so if you have found a bug or want to offer some feedback don't hesitate to contact me (see below) and
+                let me know!
+            </div>
+            <hr>
+            <div class="container center-container">
+                <div class="container split left">
+                    <div class="center-container">
+                        <h3>Open Source!</h3>
+                    </div>
+                    <div class="center-container" style="text-align: center;">
+                        <p>This application is completely open-source, access it on my GitHub page on the right. Feel
+                            free to fork it and make a pull request, or develop your own application off the back of
+                            this one!.</p>
+                    </div>
+
+                </div>
+                <div class="container center-container split right">
+                    <div class="github-card" data-github="Stebbet/FSM_Designer" data-width="100%"
+                         data-height="100%" data-theme="default"></div>
+                    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+                </div>
+            </div>
+            <hr>
+            <div class="container center-container">
+                <p>This site was designed and developed by Sam Tebbet. If you wish to contact please email <a
+                        style="color: dodgerblue" href="mailto:samtebbet@gmail.com
+         ?subject=FSM%20Designer%20Contact">samtebbet@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</div>

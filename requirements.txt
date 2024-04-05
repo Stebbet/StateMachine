@@ -1,0 +1,9 @@
+Django~=5.0.2
+djangorestframework~=3.14.0
+crispy-bootstrap5==2023.10
+django-crispy-forms==2.1
+gunicorn==21.2.0
+dj-database-url==2.1.0
+whitenoise[brotli]==6.6.0
+psycopg[c]; sys_platform == "linux"
+psycopg[binary]; sys_platform != "linux"

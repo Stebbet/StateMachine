@@ -1,0 +1,120 @@
+<style>
+
+    .table-container {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    table {
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
+    .card:hover {
+        cursor: pointer;
+    }
+
+</style>
+
+<script>
+
+
+</script>
+
+<div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+        <div class="modal-header" style="height:fit-content; padding: 0px">
+            <h4 class="fs-6" style="padding-left: 20px; padding-top: 10px">example@email.com</h4>
+
+            <button type="button"
+                    style="height:20px; width:20px; margin-bottom: 2px; margin-top: 2px; padding-right: 40px"
+                    class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="width: auto;margin-left: -2px;padding-top: 9px;">
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                    <tr>
+                        <th style="padding: 0px; margin:0px;width: 25%;padding-bottom:50%">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <button class="btn btn-warning" type="button"
+                                            onclick="sessionStorage.setItem('importing', 'false'); sessionStorage.setItem('loggingin', 'false'); window.location.href='/';"
+                                            style="width: 100%; float:left; padding: 2%; margin:0">New Diagram
+                                    </button>
+                                </li>
+                            </ul>
+                            <span></span>
+                        </th>
+                        <th style="position: absolute; top:10px; padding: 0px; padding-left: 1%; margin: 0px;width: 75%;">
+                            <div class="container table-container" style="padding: 0px; width: 100%">
+
+                                {% if user.is_authenticated %}
+                                <div style="position:relative; height: 20px; width: 100%; top: -6px">
+
+                                    <h5>Your Projects</h5>
+                                </div>
+                                {% endif %}
+
+                                <table class="scrollingTable table-responsive" id="user-projects">
+                                    <tr>
+                                        {% if user.is_authenticated %}
+                                        {% for diagram in diagrams %}
+                                        <td style="width: 200px">
+                                            <div class="card" style="width: 200px;">
+                                                <img class="card-img-top" width="100px" height="150px"
+                                                     src="{{ diagram.1 }}" id="{{ diagram.2 }}" onclick="openMachine(this);"/>
+                                                <div class="card-body" style="padding: 0;">
+                                                    <div class="input-group w-100">
+                                                        <input type="text" class="form-control"
+                                                               placeholder="{{ diagram.0 }}"
+                                                               aria-label="{{ diagram.0 }}"
+                                                               aria-describedby="basic-addon1"
+                                                               disabled>
+                                                        <button class="btn btn-outline-danger delete-button" id="{{ diagram.2 }}"
+                                                                style="width:12%; padding: 0" onclick="deleteDiagram(this)">
+                                                            <svg width="23px" height="23px" viewBox="1 1 24 24"
+                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+                                                                      fill="#0F0F0F"/>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                                    </tr>
+                                    <tr>
+                                        {% endif %}
+                                        {% endfor %}
+                                        {% else %}
+                                        <div class="container">
+                                            <p>You must be logged in to save a machine</p>
+                                        </div>
+
+                                        <div class="container">
+                                            <button class="btn btn-warning login_button" href=''
+                                                    style="position:relative;">Login
+                                            </button>
+                                            <button class="btn btn-warning register_button"
+                                                    style="position:relative;">Register
+                                            </button>
+                                        </div>
+                                        {% endif %}
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
